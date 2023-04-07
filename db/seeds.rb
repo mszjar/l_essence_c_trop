@@ -28,12 +28,12 @@ p "---------on créé 3 user jordan simon et francis----------"
     Review.create!(content: Faker::Restaurant.review, rating: [3, 4, 5].sample, car_id: car.id, title: titles_review.sample, user_id: francis.id)
   end
 
-  file = URI.open("https://prod.pictures.autoscout24.net/listing-images/ea17bed8-4c52-4eff-b927-629152439036_8605aa9c-40f1-4aba-a272-9298c429e8b3.jpg/720x540.webp")
-  car = Car.create!(brand: "Aston Martin", model: "Rapide E", color: "Gris",
-            city: "Rue Jean Pascal, 31620 Labastide-Saint-Sernin", kilometreage: Faker::Vehicle.kilometrage,
-            price: 99, autonomy: 200, user: simon)
-  car.photo.attach(io: file, filename: "Rapide E.jpg", content_type: "image/jpg")
-  car.save
+  # file = URI.open("https://prod.pictures.autoscout24.net/listing-images/ea17bed8-4c52-4eff-b927-629152439036_8605aa9c-40f1-4aba-a272-9298c429e8b3.jpg/720x540.webp")
+  # car = Car.create!(brand: "Aston Martin", model: "Rapide E", color: "Gris",
+  #           city: "Rue Jean Pascal, 31620 Labastide-Saint-Sernin", kilometreage: Faker::Vehicle.kilometrage,
+  #           price: 99, autonomy: 200, user: simon)
+  # car.photo.attach(io: file, filename: "Rapide E.jpg", content_type: "image/jpg")
+  # car.save
 
   6.times do
     Review.create!(content: Faker::Restaurant.review, rating: [3, 4, 5].sample, car_id: car.id, title: titles_review.sample, user_id: simon.id)
@@ -172,7 +172,7 @@ p "---------on créé 3 user jordan simon et francis----------"
   end
 p "---------on créé 3 voitures pour chaque user----------"
 
-Booking.create!(status: 'pending', start_date: "21/11/2022", end_date: "23/02/2023", car_id: simon.cars.sample.id, user_id: francis.id)
+# Booking.create!(status: 'pending', start_date: "21/11/2022", end_date: "23/02/2023", car_id: simon.cars.sample.id, user_id: francis.id)
 Booking.create!(status: 'pending', start_date: "12/12/2022", end_date: "20/03/2023", car_id: jordan.cars.sample.id, user_id: simon.id)
 Booking.create!(status: 'accepted', start_date: "18/04/2023", end_date: "21/04/2023", car_id: jordan.cars.sample.id, user_id: francis.id)
 p "---------finito pipo----------"
